@@ -10,6 +10,12 @@ defaults:
     - application/vnd.oci.image.manifest.v1+json
     - application/vnd.oci.image.index.v1+json
 sync:
+  - source: docker.io/ghcr.io/luncher-org/hyperkube
+    target: '{{ env "REGISTRY_ENDPOINT" }}/ghcr.io/luncher-org/hyperkube'
+    type: repository
+    tags:
+      allow:
+        - v1.33.0-rc.0-luncher1
   - source: docker.io/rancher/calico-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/calico-cni'
     type: repository
@@ -1167,6 +1173,7 @@ sync:
         - v3.5.15
         - v3.5.16
         - v3.5.2
+        - v3.5.21
         - v3.5.3
         - v3.5.4
         - v3.5.6

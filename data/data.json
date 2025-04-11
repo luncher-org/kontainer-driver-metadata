@@ -3359,6 +3359,67 @@
     "v": "2"
    }
   },
+  "v1.33": {
+   "etcd": {
+    "client-cert-auth": "true",
+    "peer-client-cert-auth": "true"
+   },
+   "kubeapi": {
+    "allow-privileged": "true",
+    "anonymous-auth": "false",
+    "api-audiences": "unknown",
+    "bind-address": "0.0.0.0",
+    "enable-admission-plugins": "NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota,NodeRestriction,Priority,TaintNodesByCondition,PersistentVolumeClaimResize",
+    "kubelet-preferred-address-types": "InternalIP,ExternalIP,Hostname",
+    "profiling": "false",
+    "requestheader-extra-headers-prefix": "X-Remote-Extra-",
+    "requestheader-group-headers": "X-Remote-Group",
+    "requestheader-username-headers": "X-Remote-User",
+    "runtime-config": "authorization.k8s.io/v1beta1=true",
+    "secure-port": "6443",
+    "service-account-issuer": "rke",
+    "service-account-lookup": "true",
+    "service-account-signing-key-file": "/etc/kubernetes/ssl/kube-service-account-token-key.pem",
+    "storage-backend": "etcd3",
+    "tls-cipher-suites": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305"
+   },
+   "kubelet": {
+    "address": "0.0.0.0",
+    "anonymous-auth": "false",
+    "authentication-token-webhook": "true",
+    "authorization-mode": "Webhook",
+    "cgroups-per-qos": "True",
+    "enforce-node-allocatable": "",
+    "event-qps": "0",
+    "make-iptables-util-chains": "true",
+    "read-only-port": "0",
+    "resolv-conf": "/etc/resolv.conf",
+    "streaming-connection-idle-timeout": "30m",
+    "tls-cipher-suites": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305",
+    "v": "2",
+    "volume-plugin-dir": "/var/lib/kubelet/volumeplugins"
+   },
+   "kubeproxy": {
+    "healthz-bind-address": "127.0.0.1",
+    "v": "2"
+   },
+   "kubeController": {
+    "allocate-node-cidrs": "true",
+    "allow-untagged-cloud": "true",
+    "configure-cloud-routes": "false",
+    "enable-hostpath-provisioner": "false",
+    "leader-elect": "true",
+    "node-monitor-grace-period": "40s",
+    "profiling": "false",
+    "terminated-pod-gc-threshold": "1000",
+    "v": "2"
+   },
+   "scheduler": {
+    "leader-elect": "true",
+    "profiling": "false",
+    "v": "2"
+   }
+  },
   "v1.9": {
    "etcd": null,
    "kubeapi": {
@@ -15096,6 +15157,45 @@
    "aciOvsContainer": "noiro/openvswitch:6.1.1.2.81c2369",
    "aciControllerContainer": "noiro/aci-containers-controller:6.1.1.2.81c2369"
   },
+  "v1.33.0-rc.0-luncher1": {
+   "etcd": "rancher/mirrored-coreos-etcd:v3.5.21",
+   "alpine": "rancher/rke-tools:v0.1.111",
+   "nginxProxy": "rancher/rke-tools:v0.1.111",
+   "certDownloader": "rancher/rke-tools:v0.1.111",
+   "kubernetesServicesSidecar": "rancher/rke-tools:v0.1.111",
+   "kubedns": "rancher/mirrored-k8s-dns-kube-dns:1.23.0",
+   "dnsmasq": "rancher/mirrored-k8s-dns-dnsmasq-nanny:1.23.0",
+   "kubednsSidecar": "rancher/mirrored-k8s-dns-sidecar:1.23.0",
+   "kubednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
+   "coredns": "rancher/mirrored-coredns-coredns:1.11.3",
+   "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
+   "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.23.0",
+   "kubernetes": "ghcr.io/luncher-org/hyperkube:v1.33.0-rc.0-luncher1",
+   "flannel": "rancher/mirrored-flannel-flannel:v0.26.4",
+   "flannelCni": "rancher/flannel-cni:v1.4.1-rancher1",
+   "calicoNode": "rancher/mirrored-calico-node:v3.29.0",
+   "calicoCni": "rancher/calico-cni:v3.29.0-rancher1",
+   "calicoControllers": "rancher/mirrored-calico-kube-controllers:v3.29.0",
+   "calicoCtl": "rancher/mirrored-calico-ctl:v3.29.0",
+   "calicoFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol:v3.29.0",
+   "canalNode": "rancher/mirrored-calico-node:v3.29.0",
+   "canalCni": "rancher/calico-cni:v3.29.0-rancher1",
+   "canalControllers": "rancher/mirrored-calico-kube-controllers:v3.29.0",
+   "canalFlannel": "rancher/mirrored-flannel-flannel:v0.26.4",
+   "canalFlexVol": "rancher/mirrored-calico-pod2daemon-flexvol:v3.29.0",
+   "podInfraContainer": "rancher/mirrored-pause:3.7",
+   "ingress": "rancher/nginx-ingress-controller:nginx-1.12.0-rancher1",
+   "ingressBackend": "rancher/mirrored-nginx-ingress-controller-defaultbackend:1.5-rancher2",
+   "ingressWebhook": "rancher/mirrored-ingress-nginx-kube-webhook-certgen:v1.4.1",
+   "metricsServer": "rancher/mirrored-metrics-server:v0.7.2",
+   "windowsPodInfraContainer": "rancher/mirrored-pause:3.7",
+   "aciCniDeployContainer": "noiro/cnideploy:6.1.1.2.81c2369",
+   "aciHostContainer": "noiro/aci-containers-host:6.1.1.2.81c2369",
+   "aciOpflexContainer": "noiro/opflex:6.1.1.2.81c2369",
+   "aciMcastContainer": "noiro/opflex:6.1.1.2.81c2369",
+   "aciOvsContainer": "noiro/openvswitch:6.1.1.2.81c2369",
+   "aciControllerContainer": "noiro/aci-containers-controller:6.1.1.2.81c2369"
+  },
   "v1.8.11-rancher2-1": {
    "etcd": "rancher/coreos-etcd:v3.0.17",
    "alpine": "rancher/rke-tools:v0.1.8",
@@ -16103,6 +16203,10 @@
    "minRKEVersion": "1.8.0-rc0",
    "minRancherVersion": "2.11.0-patch0"
   },
+  "v1.33": {
+   "minRKEVersion": "1.8.0-rc0",
+   "minRancherVersion": "2.11.0-patch0"
+  },
   "v1.8": {
    "maxRKEVersion": "0.2.2",
    "maxRancherVersion": "2.2"
@@ -16470,6 +16574,27 @@
    "27.5.x"
   ],
   "1.32": [
+   "1.13.x",
+   "17.03.x",
+   "17.06.x",
+   "17.09.x",
+   "18.06.x",
+   "18.09.x",
+   "19.03.x",
+   "20.10.x",
+   "23.0.x",
+   "24.0.x",
+   "25.0.x",
+   "26.0.x",
+   "26.1.x",
+   "27.0.x",
+   "27.1.x",
+   "27.2.x",
+   "27.3.x",
+   "27.4.x",
+   "27.5.x"
+  ],
+  "1.33": [
    "1.13.x",
    "17.03.x",
    "17.06.x",
@@ -17165,6 +17290,38 @@
    "scheduler": null
   },
   "v1.32": {
+   "etcd": null,
+   "kubeapi": null,
+   "kubelet": {
+    "address": "0.0.0.0",
+    "anonymous-auth": "false",
+    "authentication-token-webhook": "true",
+    "authorization-mode": "Webhook",
+    "cert-dir": "[PREFIX_PATH]/var/lib/kubelet/pki",
+    "cgroups-per-qos": "false",
+    "enforce-node-allocatable": "''",
+    "event-qps": "0",
+    "kube-reserved": "cpu=500m,memory=500Mi,ephemeral-storage=1Gi",
+    "make-iptables-util-chains": "true",
+    "network-plugin": "cni",
+    "read-only-port": "0",
+    "resolv-conf": "''",
+    "streaming-connection-idle-timeout": "30m",
+    "system-reserved": "cpu=1000m,memory=2Gi,ephemeral-storage=2Gi",
+    "tls-cipher-suites": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305",
+    "v": "2",
+    "volume-plugin-dir": "[PREFIX_PATH]/var/lib/kubelet/volumeplugins"
+   },
+   "kubeproxy": {
+    "enable-dsr": "false",
+    "healthz-bind-address": "127.0.0.1",
+    "proxy-mode": "kernelspace",
+    "v": "2"
+   },
+   "kubeController": null,
+   "scheduler": null
+  },
+  "v1.33": {
    "etcd": null,
    "kubeapi": null,
    "kubelet": {
