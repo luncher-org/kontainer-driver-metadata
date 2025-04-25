@@ -15157,7 +15157,7 @@
    "aciOvsContainer": "noiro/openvswitch:6.1.1.2.81c2369",
    "aciControllerContainer": "noiro/aci-containers-controller:6.1.1.2.81c2369"
   },
-  "v1.33.0-rc.1-luncher1": {
+  "v1.33.0-luncher1": {
    "etcd": "rancher/mirrored-coreos-etcd:v3.5.21",
    "alpine": "rancher/rke-tools:v0.1.111",
    "nginxProxy": "rancher/rke-tools:v0.1.111",
@@ -15170,7 +15170,7 @@
    "coredns": "rancher/mirrored-coredns-coredns:1.11.3",
    "corednsAutoscaler": "rancher/mirrored-cluster-proportional-autoscaler:v1.8.9",
    "nodelocal": "rancher/mirrored-k8s-dns-node-cache:1.23.0",
-   "kubernetes": "ghcr.io/luncher-org/hyperkube:v1.33.0-rc.1-luncher1",
+   "kubernetes": "ghcr.io/luncher-org/hyperkube:v1.33.0-luncher1",
    "flannel": "rancher/mirrored-flannel-flannel:v0.26.4",
    "flannelCni": "rancher/flannel-cni:v1.4.1-rancher1",
    "calicoNode": "rancher/mirrored-calico-node:v3.29.0",
@@ -16571,7 +16571,9 @@
    "27.2.x",
    "27.3.x",
    "27.4.x",
-   "27.5.x"
+   "27.5.x",
+   "28.0.x",
+   "28.1.x"
   ],
   "1.32": [
    "1.13.x",
@@ -16592,7 +16594,9 @@
    "27.2.x",
    "27.3.x",
    "27.4.x",
-   "27.5.x"
+   "27.5.x",
+   "28.0.x",
+   "28.1.x"
   ],
   "1.33": [
    "1.13.x",
@@ -16613,7 +16617,9 @@
    "27.2.x",
    "27.3.x",
    "27.4.x",
-   "27.5.x"
+   "27.5.x",
+   "28.0.x",
+   "28.1.x"
   ],
   "1.8": [
    "1.11.x",
