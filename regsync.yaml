@@ -17,6 +17,7 @@ sync:
       allow:
         - v1.33.0-luncher1
         - v1.33.1-luncher1
+        - v1.33.2-luncher1
   - source: docker.io/rancher/calico-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/calico-cni'
     type: repository
